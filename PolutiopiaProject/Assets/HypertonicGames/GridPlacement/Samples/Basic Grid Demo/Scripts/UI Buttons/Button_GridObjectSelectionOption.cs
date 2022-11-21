@@ -22,6 +22,7 @@ namespace Hypertonic.GridPlacement.Example.BasicDemo
 
         private void HandleButtonClicked()
         {
+            if (!LevelManager.Instance.ShopManager.Buy(_gridObjectToSpawnPrefab.GetComponent<Building>())) return;
             if (_gridObjectToSpawnPrefab == null)
             {
                 Debug.LogError("Error. No prefab assigned to spawn on this selection option");
