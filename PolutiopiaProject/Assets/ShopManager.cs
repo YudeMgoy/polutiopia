@@ -8,6 +8,8 @@ public class ShopManager : MonoBehaviour
     {
         if(_building.moneyPrice <= LevelManager.Instance.money && _building.woodPrice <= LevelManager.Instance.wood)
         {
+            LevelManager.Instance.money -= _building.moneyPrice;
+            LevelManager.Instance.wood -= _building.woodPrice;
             return true;
         }
         return false;

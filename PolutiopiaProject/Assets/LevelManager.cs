@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class LevelManager : MonoBehaviour
     [Header("Resources")]
     public double money;
     public double wood;
+    public TMP_Text woodText;
+    public TMP_Text moneyText;
 
     [Header("Managers")]
     public ShopManager ShopManager;
@@ -18,8 +21,9 @@ public class LevelManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
+    private void Update()
     {
-        
+        woodText.text = "Wood  : " + wood.ToString();
+        moneyText.text = "Money : " + money.ToString();
     }
 }
