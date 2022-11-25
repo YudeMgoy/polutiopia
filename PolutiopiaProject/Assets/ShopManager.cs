@@ -6,10 +6,11 @@ public class ShopManager : MonoBehaviour
 {
     public bool Buy(Building _building)
     {
-        if(_building.moneyPrice <= LevelManager.Instance.money && _building.woodPrice <= LevelManager.Instance.wood)
+        if(_building.MoneyPrice <= LevelManager.Instance.money && _building.WoodPrice <= LevelManager.Instance.wood)
         {
-            LevelManager.Instance.money -= _building.moneyPrice;
-            LevelManager.Instance.wood -= _building.woodPrice;
+            LevelManager.Instance.CountingPollution(LevelManager.Instance.SelectedBuilding.PollutionReduction);
+            LevelManager.Instance.money -= _building.MoneyPrice;
+            LevelManager.Instance.wood -= _building.WoodPrice;
             return true;
         }
         return false;
@@ -17,9 +18,10 @@ public class ShopManager : MonoBehaviour
 
     public void Sell()
     {
+        LevelManager.Instance.CountingPollution(-LevelManager.Instance.SelectedBuilding.PollutionReduction);
         Building _building = LevelManager.Instance.SelectedBuilding;
-        LevelManager.Instance.money += _building.moneyPrice;
-        LevelManager.Instance.wood += _building.woodPrice;
+        LevelManager.Instance.money += _building.MoneyPrice * .5;
+        LevelManager.Instance.wood += _building.WoodPrice*.5;
         Destroy(_building.gameObject);
         LevelManager.Instance.BuildingStatPanel.SetActive(false);
     }

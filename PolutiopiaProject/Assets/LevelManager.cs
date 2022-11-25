@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Hypertonic.GridPlacement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -20,9 +21,15 @@ public class LevelManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject BuildingStatPanel;
+    public Image ProgressImage;
 
     [Header("Runtime Variable")]
     public Building SelectedBuilding;
+
+    [Header("Level Progress")]
+    public float MaxPolution;
+    public float CurrentPolution;
+    float pollutionInPercent;
 
 
     private void Awake()
@@ -30,10 +37,15 @@ public class LevelManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        CountingPollution(0);
+    }
+
     private void Update()
     {
         woodText.text = "Wood  : " + wood.ToString();
-        moneyText.text = "Money : " + money.ToString();
+        moneyText.text = "Money : " + money.ToString();        
     }
 
     public void OpenBuildingStatPanel(Building _building)
@@ -42,5 +54,14 @@ public class LevelManager : MonoBehaviour
             return;
         SelectedBuilding = _building;
         BuildingStatPanel.SetActive(true);
+    }
+
+    public void CountingPollution(float _pollution)
+    {
+        CurrentPolution -= _pollution;
+        if (CurrentPolution <= 0f)
+            CurrentPolution = 0f;
+        pollutionInPercent = CurrentPolution / MaxPolution * 100;
+        ProgressImage.fillAmount = pollutionInPercent * 0.01f;
     }
 }

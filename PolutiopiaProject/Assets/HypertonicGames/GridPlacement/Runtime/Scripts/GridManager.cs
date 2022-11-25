@@ -450,11 +450,13 @@ namespace Hypertonic.GridPlacement
                 return false;
             }
 
+            if (!LevelManager.Instance.ShopManager.Buy(LevelManager.Instance.SelectedBuilding.GetComponent<Building>())) return false;
             PlacementValidResponse placementValidResponse = IsObjectPlacementValid();
             bool placementValid = placementValidResponse.Valid;
+            
 
             if (placementValid)
-            {
+            {                
                 return PlaceObject();
             }
 

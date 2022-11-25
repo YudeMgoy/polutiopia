@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    public double moneyPrice;
-    public double woodPrice;
+    public double MoneyPrice;
+    public double WoodPrice;
+    public float PollutionReduction;
 
     private void OnMouseDown()
     {

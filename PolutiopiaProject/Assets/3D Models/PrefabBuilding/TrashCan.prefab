@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51740a194606841af51a2eafa26452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyPrice: 100
-  woodPrice: 0
+  MoneyPrice: 100
+  WoodPrice: 0
+  PollutionReduction: 10
 --- !u!114 &3622475516982910794
 MonoBehaviour:
   m_ObjectHideFlags: 0
