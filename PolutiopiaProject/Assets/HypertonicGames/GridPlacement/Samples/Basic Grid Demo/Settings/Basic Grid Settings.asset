@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Basic Grid Settings
   m_EditorClassIdentifier: 
   Key: Basic Grid Settings
-  Width: 10
-  Height: 10
+  Width: 12
+  Height: 12
   GridSizeRatio: {x: 1, y: 1}
-  AmountOfCellsX: 10
-  AmountOfCellsY: 10
+  AmountOfCellsX: 12
+  AmountOfCellsY: 12
   GridPosition: {x: 0, y: 0.001, z: 0}
   GridRotation: 0
   ParentToGrid: 1
