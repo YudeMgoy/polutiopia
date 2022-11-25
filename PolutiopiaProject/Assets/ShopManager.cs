@@ -14,4 +14,13 @@ public class ShopManager : MonoBehaviour
         }
         return false;
     }
+
+    public void Sell()
+    {
+        Building _building = LevelManager.Instance.SelectedBuilding;
+        LevelManager.Instance.money += _building.moneyPrice;
+        LevelManager.Instance.wood += _building.woodPrice;
+        Destroy(_building.gameObject);
+        LevelManager.Instance.BuildingStatPanel.SetActive(false);
+    }
 }
