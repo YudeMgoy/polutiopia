@@ -15,7 +15,7 @@ namespace Hypertonic.GridPlacement.Example.BasicDemo
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            OnObjectSelected?.Invoke(gameObject);
+            //OnObjectSelected?.Invoke(gameObject);
         }
 
         public void OnPointerDown(PointerEventData eventData)

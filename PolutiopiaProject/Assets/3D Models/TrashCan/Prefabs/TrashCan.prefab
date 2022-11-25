@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4300006994140473310}
   - component: {fileID: 5905719771854381125}
   - component: {fileID: 3622475516982910794}
+  - component: {fileID: 5788517239269314000}
   m_Layer: 0
   m_Name: TrashCan
   m_TagString: Untagged
@@ -66,6 +67,19 @@ MonoBehaviour:
   _gridHeightGizmoSize: 0.05
   _gridHeightGizmoColor: {r: 1, g: 0, b: 1, a: 1}
   _enableHandles: 1
+--- !u!65 &5788517239269314000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3523892129602501988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.64853585, y: 1.1098325, z: 0.6002096}
+  m_Center: {x: -0.0043932796, y: 0.5293927, z: 0.0021966249}
 --- !u!1 &4573823530696813813
 GameObject:
   m_ObjectHideFlags: 0
