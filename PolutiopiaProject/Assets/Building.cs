@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    public string name;
     public double MoneyPrice;
     public double WoodPrice;
     public float PollutionReduction;
+    public Sprite UIImage; 
+    [TextArea]
+    public string description;
 
     private void OnMouseDown()
     {

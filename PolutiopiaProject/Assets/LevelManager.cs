@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
     [Header("UI")]
     public GameObject BuildingStatPanel;
     public Image ProgressImage;
+    public StatPanelScript StatPanelScript;
 
     [Header("Runtime Variable")]
     public Building SelectedBuilding;
@@ -29,6 +30,7 @@ public class LevelManager : MonoBehaviour
     [Header("Level Progress")]
     public float MaxPolution;
     public float CurrentPolution;
+    public float[] TargetPolutions;
     float pollutionInPercent;
 
 
@@ -38,7 +40,7 @@ public class LevelManager : MonoBehaviour
     }
 
     private void Start()
-    {
+    {        
         CountingPollution(0);
     }
 
@@ -54,6 +56,7 @@ public class LevelManager : MonoBehaviour
             return;
         SelectedBuilding = _building;
         BuildingStatPanel.SetActive(true);
+        StatPanelScript.UpdateUI();
     }
 
     public void CountingPollution(float _pollution)
@@ -63,5 +66,32 @@ public class LevelManager : MonoBehaviour
             CurrentPolution = 0f;
         pollutionInPercent = CurrentPolution / MaxPolution * 100;
         ProgressImage.fillAmount = pollutionInPercent * 0.01f;
+    }
+
+    public void GameOver(bool lose)
+    {
+        if (lose)
+        {
+            return;
+        }
+        else
+        {
+            if (CurrentPolution <= TargetPolutions[3])//Bintang 4
+            {
+
+            }
+            if(CurrentPolution <= TargetPolutions[2])//Bintang 3
+            {
+
+            }
+            if(CurrentPolution <= TargetPolutions[1])//Bintang 2
+            {
+
+            }
+            if(CurrentPolution <= TargetPolutions[0])//Bintang 1
+            {
+
+            }
+        }
     }
 }
