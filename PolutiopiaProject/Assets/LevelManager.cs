@@ -33,6 +33,13 @@ public class LevelManager : MonoBehaviour
     public float[] TargetPolutions;
     float pollutionInPercent;
 
+    [Header("Timer Setting")]
+    public Image timerImage;
+    public GameObject pausePanel;
+    public int duration;
+    private int remainingDuration;
+    public TimerFill timerFill;
+
 
     private void Awake()
     {
@@ -40,14 +47,15 @@ public class LevelManager : MonoBehaviour
     }
 
     private void Start()
-    {        
+    {
         CountingPollution(0);
+        Being(duration);
     }
 
     private void Update()
     {
         woodText.text = "Wood  : " + wood.ToString();
-        moneyText.text = "Money : " + money.ToString();        
+        moneyText.text = "Money : " + money.ToString();
     }
 
     public void OpenBuildingStatPanel(Building _building)
@@ -68,6 +76,43 @@ public class LevelManager : MonoBehaviour
         ProgressImage.fillAmount = pollutionInPercent * 0.01f;
     }
 
+    private void Being(int Seconds)
+    {
+        remainingDuration = Seconds;
+        StartCoroutine(UpdateTimer());
+    }
+
+    IEnumerator UpdateTimer()
+    {
+        while (remainingDuration >= 0)
+        {
+            timerFill.UpdateFill((float)remainingDuration / duration);
+            timerImage.fillAmount = Mathf.InverseLerp(0, duration, remainingDuration);
+            remainingDuration--;
+            yield return new WaitForSeconds(1);
+        }
+        OnEnd();
+    }
+
+    private void OnEnd()
+    {
+        GameOver(true);
+        print("times Up");
+    }
+
+    public void PauseGame()
+    {
+        // Time.timeScale = 0;
+        StopAllCoroutines();
+    }
+
+    public void ResumeGame()
+    {
+        // Time.timeScale = 1;
+        StartCoroutine(UpdateTimer());
+        pausePanel.SetActive(true);
+    }
+
     public void GameOver(bool lose)
     {
         if (lose)
@@ -80,15 +125,15 @@ public class LevelManager : MonoBehaviour
             {
 
             }
-            if(CurrentPolution <= TargetPolutions[2])//Bintang 3
+            if (CurrentPolution <= TargetPolutions[2])//Bintang 3
             {
 
             }
-            if(CurrentPolution <= TargetPolutions[1])//Bintang 2
+            if (CurrentPolution <= TargetPolutions[1])//Bintang 2
             {
 
             }
-            if(CurrentPolution <= TargetPolutions[0])//Bintang 1
+            if (CurrentPolution <= TargetPolutions[0])//Bintang 1
             {
 
             }

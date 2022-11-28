@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [Header("Camera Settings")]
+    [SerializeField] Camera orthoCamera;
     [SerializeField, Range(0, 20)] float filterFactor = 1f;
     [SerializeField, Range(0, 2)] float dragFactor = 1f;
     [SerializeField, Range(0, 2)] float zoomFactor = 1f;
@@ -13,6 +15,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] Collider camBarrier;
 
     float distance;
+    float camPosX;
+    float camPosY;
+    float camPosZ;
 
 
     // Start is called before the first frame update
@@ -30,7 +35,7 @@ public class CameraController : MonoBehaviour
 
         var touch0 = Input.GetTouch(0);
 
-        // simpan posisi awal tapi posisi real world
+
         if (touch0.phase == TouchPhase.Began)
         {
             touchBeganWorldPos = Camera.main.ScreenToWorldPoint(
@@ -38,18 +43,16 @@ public class CameraController : MonoBehaviour
             cameraBeganWorldPos = this.transform.position;
         }
 
-        // atur posisi sekarang sesuai perubahan dari posisi bagan
+
         if (Input.touchCount == 1 && touch0.phase == TouchPhase.Moved)
         {
-            // posisi touch (world space) saat ini
+
             var touchMovedWorldPos = Camera.main.ScreenToWorldPoint(
                 new Vector3(touch0.position.x, touch0.position.y, distance));
 
-            // perbedaan posisi (world space)
+
             var delta = touchMovedWorldPos - touchBeganWorldPos;
 
-            //  menggunakan lerp(linear interpolation) sebagai filter
-            // agar movement lebih smooth
             var targetPos = cameraBeganWorldPos - delta * dragFactor;
 
             targetPos = new Vector3(
@@ -78,7 +81,21 @@ public class CameraController : MonoBehaviour
             var currDistance = Vector3.Distance(touch0.position, touch1.position);
             var delta = currDistance - prevDistance;
 
-            this.transform.position += new Vector3(0, delta * zoomFactor, 0);
+            if (orthoCamera.orthographic)
+            {
+                orthoCamera.orthographicSize = Mathf.Clamp(
+                    orthoCamera.orthographicSize - delta * zoomFactor,
+                    minCamPos,
+                    maxCamPos
+                );
+            }
+            else
+            {
+                camPosX = transform.position.x;
+                camPosY = Mathf.Clamp(transform.position.y - delta * zoomFactor, minCamPos, maxCamPos);
+                camPosZ = transform.position.z;
+                transform.position = new Vector3(camPosX, camPosY, camPosZ);
+            }
             this.transform.position = new Vector3(
                 this.transform.position.x,
                 Mathf.Clamp(this.transform.position.y, minCamPos, maxCamPos),
