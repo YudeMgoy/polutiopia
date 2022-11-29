@@ -26,7 +26,20 @@ namespace Hypertonic.GridPlacement.Example.BasicDemo
             {
                 Debug.LogError("Error. No prefab assigned to spawn on this selection option");
             }
-            LevelManager.Instance.SelectedBuilding = _gridObjectToSpawnPrefab.GetComponent<Building>();
+            Building prefabBuilding = _gridObjectToSpawnPrefab.GetComponent<Building>();
+            Building[] buildings = FindObjectsOfType<Building>();
+            int count = 0;
+            foreach(Building building in buildings)
+            {
+                if (building.BuildingID == prefabBuilding.BuildingID)
+                    count++;
+            }
+            if (count >= prefabBuilding.BuildingCountLimit)
+            {
+                Debug.Log("Building Reach its Limit");
+                return;
+            }
+            LevelManager.Instance.SelectedBuilding = prefabBuilding;
 
             GameObject objectToPlace = Instantiate(_gridObjectToSpawnPrefab, GridManagerAccessor.GridManager.GetGridPosition(), new Quaternion());
 

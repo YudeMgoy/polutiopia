@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    public int BuildingID;
+    public int BuildingCountLimit;
     public string name;
     public double MoneyPrice;
     public double WoodPrice;
