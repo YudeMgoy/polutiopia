@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuildingID: 2
+  BuildingCountLimit: 10
   name: Small Tree
   MoneyPrice: 50
   WoodPrice: 0

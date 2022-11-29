@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51740a194606841af51a2eafa26452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildingID: 0
+  BuildingCountLimit: 10
   name: Big Tree
   MoneyPrice: 75
   WoodPrice: 0

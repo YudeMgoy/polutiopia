@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     [Header("Resources")]
     public double money;
     public double wood;
+    public double woodCost = 1;
+    public double moneyCostperWood=100;
     public TMP_Text woodText;
     public TMP_Text moneyText;
 
@@ -27,6 +29,8 @@ public class LevelManager : MonoBehaviour
     public TMP_Text endText;
     public TMP_Text endScoreText;
     public Button endButton;
+    public GameObject WoodCenterPanel;
+    public TMP_Text ExchangeNum;
 
     [Header("Runtime Variable")]
     public Building SelectedBuilding;
@@ -69,6 +73,10 @@ public class LevelManager : MonoBehaviour
         SelectedBuilding = _building;
         BuildingStatPanel.SetActive(true);
         StatPanelScript.UpdateUI();
+        if(SelectedBuilding.tag == "WoodCenter")
+            WoodCenterPanel.SetActive(true);
+        else
+            WoodCenterPanel.SetActive(false);
     }
 
     public void CountingPollution(float _pollution)
@@ -162,5 +170,22 @@ public class LevelManager : MonoBehaviour
 
             }
         }
+    }
+
+    public void WoodExchange()
+    {
+        money += moneyCostperWood;
+        wood -= woodCost;
+        IncreaseWoodCost();
+        UpdateExchangeNum();
+    }
+
+    public void IncreaseWoodCost()
+    {
+        woodCost *=2;
+    }
+    public void UpdateExchangeNum()
+    {
+        ExchangeNum.text = woodCost + "Wood = " + moneyCostperWood +"$";
     }
 }

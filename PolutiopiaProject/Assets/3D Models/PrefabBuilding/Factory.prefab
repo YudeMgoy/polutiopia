@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6160556323942550659}
   m_Layer: 0
   m_Name: Factory
-  m_TagString: Untagged
+  m_TagString: WoodCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuildingID: 3
+  BuildingCountLimit: 2
   name: FACTORY
   MoneyPrice: 150
   WoodPrice: 150

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuildingID: 4
-  BuildingCountLimit: 2
+  BuildingCountLimit: 4
   name: Trash Can
   MoneyPrice: 100
   WoodPrice: 0
