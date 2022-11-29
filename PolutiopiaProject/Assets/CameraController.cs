@@ -15,9 +15,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] Collider camBarrier;
 
     float distance;
-    float camPosX;
-    float camPosY;
-    float camPosZ;
 
 
     // Start is called before the first frame update
@@ -91,16 +88,12 @@ public class CameraController : MonoBehaviour
             }
             else
             {
-                camPosX = transform.position.x;
-                camPosY = Mathf.Clamp(transform.position.y - delta * zoomFactor, minCamPos, maxCamPos);
-                camPosZ = transform.position.z;
-                transform.position = new Vector3(camPosX, camPosY, camPosZ);
+                orthoCamera.fieldOfView = Mathf.Clamp(
+                    orthoCamera.fieldOfView - delta * zoomFactor,
+                    minCamPos,
+                    maxCamPos
+                );
             }
-            this.transform.position = new Vector3(
-                this.transform.position.x,
-                Mathf.Clamp(this.transform.position.y, minCamPos, maxCamPos),
-                this.transform.position.z
-            );
             distance = this.transform.position.y;
         }
     }

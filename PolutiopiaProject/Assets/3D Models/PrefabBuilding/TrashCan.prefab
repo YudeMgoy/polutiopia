@@ -51,7 +51,7 @@ MonoBehaviour:
   name: Trash Can
   MoneyPrice: 100
   WoodPrice: 0
-  PollutionReduction: 10
+  PollutionReduction: 50
   UIImage: {fileID: 0}
   description: Reduce 10 Polutions.
 --- !u!114 &3622475516982910794
