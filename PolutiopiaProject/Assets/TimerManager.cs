@@ -34,8 +34,8 @@ public class TimerManager : MonoBehaviour
             remainingDuration--;
             yield return new WaitForSeconds(1);
         }
+        // LevelManager.GameOver(true);
         OnEnd();
-        LevelManager.GameOver(true);
     }
 
     public void OnEnd()
@@ -57,5 +57,12 @@ public class TimerManager : MonoBehaviour
         pausePanel.SetActive(true);
     }
 
+    public void EndGame()
+    {
+        // Time.timeScale = 1;
+        StopAllCoroutines();
+        LevelManager.GameOver(true);
+
+    }
 
 }

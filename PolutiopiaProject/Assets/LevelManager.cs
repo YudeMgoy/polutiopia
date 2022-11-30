@@ -79,8 +79,6 @@ public class LevelManager : MonoBehaviour
             {
                 endButton.gameObject.SetActive(true);
                 // GameOver()
-
-
             }
 
             // endButton.gameObject.SetActive(true);
