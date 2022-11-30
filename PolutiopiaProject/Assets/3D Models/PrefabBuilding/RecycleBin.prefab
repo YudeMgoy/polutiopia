@@ -137,7 +137,9 @@ MonoBehaviour:
   BuildingCountLimit: 4
   name: Trash Can
   MoneyPrice: 100
+  moneySellBonus: 50
   WoodPrice: 0
+  woodSellBonus: 0
   PollutionReduction: 50
   UIImage: {fileID: 0}
   description: Reduce 10 Polutions.

@@ -51,7 +51,9 @@ MonoBehaviour:
   BuildingCountLimit: 10
   name: Small Tree
   MoneyPrice: 50
+  moneySellBonus: 0
   WoodPrice: 0
+  woodSellBonus: 10
   PollutionReduction: 15
   UIImage: {fileID: 0}
   description: Reduce pollution by 15

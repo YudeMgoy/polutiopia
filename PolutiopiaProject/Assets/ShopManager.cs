@@ -16,19 +16,13 @@ public class ShopManager : MonoBehaviour
         return false;
     }
 
-    public void Sell(int woodBonus = 0, int moneyBonus = 0)
+    public void Sell()
     {
         LevelManager.Instance.CountingPollution(-LevelManager.Instance.SelectedBuilding.PollutionReduction);
         Building _building = LevelManager.Instance.SelectedBuilding;
 
-        if (moneyBonus == 0)
-            LevelManager.Instance.money += _building.MoneyPrice * .5;
-        else
-            LevelManager.Instance.money += moneyBonus;
-        if(woodBonus == 0)
-            LevelManager.Instance.wood += _building.WoodPrice*.5;
-        else
-            LevelManager.Instance.wood += woodBonus;
+        LevelManager.Instance.money += _building.moneySellBonus;
+        LevelManager.Instance.wood += _building.woodSellBonus;        
 
         Destroy(_building.gameObject);
         LevelManager.Instance.BuildingStatPanel.SetActive(false);

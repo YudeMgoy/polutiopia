@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1875747311777480181}
   - component: {fileID: 9172628793782504262}
   - component: {fileID: 6160556323942550659}
+  - component: {fileID: 3189290406033187231}
+  - component: {fileID: 851398290674184599}
   m_Layer: 0
   m_Name: Factory
   m_TagString: WoodCenter
@@ -51,10 +53,12 @@ MonoBehaviour:
   BuildingCountLimit: 2
   name: FACTORY
   MoneyPrice: 150
+  moneySellBonus: 75
   WoodPrice: 150
+  woodSellBonus: 0
   PollutionReduction: -50
   UIImage: {fileID: 0}
-  description: Increase Polution for money
+  description: Increase 1 Polution/Second and 5 Money/Second for each time.
 --- !u!114 &9172628793782504262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +89,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3189290406033187231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185836018247722855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d0d7176f31215499fa7b93c643a343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  running: 1
+  PollutionCount: 1
+  interval: 1
+--- !u!114 &851398290674184599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185836018247722855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a12cf5a34f7074c98dd9913dd0e5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  running: 1
+  MoneyCount: 5
+  interval: 1
 --- !u!1001 &4234922979928084400
 PrefabInstance:
   m_ObjectHideFlags: 0

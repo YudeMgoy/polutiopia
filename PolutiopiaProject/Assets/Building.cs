@@ -8,7 +8,9 @@ public class Building : MonoBehaviour
     public int BuildingCountLimit;
     public string name;
     public double MoneyPrice;
+    public int moneySellBonus;
     public double WoodPrice;
+    public int woodSellBonus;
     public float PollutionReduction;
     public Sprite UIImage; 
     [TextArea]
