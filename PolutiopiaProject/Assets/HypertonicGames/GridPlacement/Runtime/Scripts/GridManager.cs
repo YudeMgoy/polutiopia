@@ -49,7 +49,7 @@ namespace Hypertonic.GridPlacement
                     GameObject gridObject = gridObjects[i];
                     GridObjectInfo gridObjectInfo = gridObject.GetComponent<GridObjectInfo>();
 
-                    gridObjectPositionDatas.Add(new GridObjectPositionData(gridObject, gridObjectInfo.GridCellIndex, gridObjectInfo.ObjectAlignment));
+                    gridObjectPositionDatas.Add(new GridObjectPositionData(gridObject, gridObjectInfo.GridCellIndex, gridObjectInfo.ObjectAlignment));                    
                 }
 
                 return new GridData(_gridSettings.Key, gridObjectPositionDatas);

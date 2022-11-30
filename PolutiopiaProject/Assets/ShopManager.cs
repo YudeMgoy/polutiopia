@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Hypertonic.GridPlacement;
 
 public class ShopManager : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class ShopManager : MonoBehaviour
         LevelManager.Instance.money += _building.moneySellBonus;
         LevelManager.Instance.wood += _building.woodSellBonus;        
 
-        Destroy(_building.gameObject);
+        //Destroy(_building.gameObject);
+        GridManagerAccessor.GridManager.DeleteObject(_building.gameObject);
         LevelManager.Instance.BuildingStatPanel.SetActive(false);
     }
 }

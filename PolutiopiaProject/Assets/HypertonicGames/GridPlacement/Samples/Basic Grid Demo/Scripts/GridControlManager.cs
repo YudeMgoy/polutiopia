@@ -78,8 +78,8 @@ namespace Hypertonic.GridPlacement.Example.BasicDemo
         {
             _selectedGridObject = gridObject;
 
-            _cancelPlacementButton.SetActive(true);
-            _deleteObjectButton.SetActive(false);
+            //_cancelPlacementButton.SetActive(true);
+            //_deleteObjectButton.SetActive(false);
         }
 
         private void HandleExampleGridObjectSelected(GameObject gridObject)
