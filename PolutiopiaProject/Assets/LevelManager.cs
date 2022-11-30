@@ -42,6 +42,9 @@ public class LevelManager : MonoBehaviour
     public float[] TargetPolutions;
     float pollutionInPercent;
 
+    [Header("Audio")]
+    [SerializeField]AudioSource sfx;
+    [SerializeField]AudioClip sfxClick;
     private void Awake()
     {
         Instance = this;
@@ -66,6 +69,9 @@ public class LevelManager : MonoBehaviour
             return;
         SelectedBuilding = _building;
         BuildingStatPanel.SetActive(true);
+        //play audio click
+        sfx.PlayOneShot(sfxClick,sfx.volume);
+        //========
         StatPanelScript.UpdateUI();
         if(SelectedBuilding.tag == "WoodCenter")
             WoodCenterPanel.SetActive(true);

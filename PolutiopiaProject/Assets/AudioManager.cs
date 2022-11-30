@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource music;
+    public AudioSource sfx;
+    public AudioClip[] sfxArray;
     public Slider musicVolume;
     public Slider sfxVolume;
 
@@ -18,11 +20,16 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         music.volume = musicVolume.value;
+        sfx.volume = sfxVolume.value;
     }
 
     public void VolumePrefs()
     {
         PlayerPrefs.SetFloat("MusicVolume",music.volume);
         PlayerPrefs.SetFloat("SfxVolume",sfxVolume.value);
+    }
+    public void PlayClickAudio()
+    {
+        sfx.PlayOneShot(sfxArray[0],sfx.volume);
     }
 }
