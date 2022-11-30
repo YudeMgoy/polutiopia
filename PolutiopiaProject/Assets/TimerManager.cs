@@ -34,7 +34,7 @@ public class TimerManager : MonoBehaviour
             remainingDuration--;
             yield return new WaitForSeconds(1);
         }
-        // LevelManager.GameOver(true);
+        LevelManager.GameOver(true);
         OnEnd();
     }
 
