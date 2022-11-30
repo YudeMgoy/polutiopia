@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7906519397671391250}
   - component: {fileID: 2316137414412156566}
   - component: {fileID: 3481393601865841544}
+  - component: {fileID: 7551671052209667788}
   m_Layer: 0
   m_Name: TentM
   m_TagString: Untagged
@@ -101,7 +102,9 @@ MonoBehaviour:
   BuildingCountLimit: 0
   name: 
   MoneyPrice: 0
+  moneySellBonus: 0
   WoodPrice: 0
+  woodSellBonus: 0
   PollutionReduction: 0
   UIImage: {fileID: 0}
   description: 
@@ -118,3 +121,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.801861, y: 4.6861777, z: 12.736048}
   m_Center: {x: -7.4333797, y: 2.491607, z: 2.1648636}
+--- !u!114 &7551671052209667788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628906989225871273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2ba506dafb7904f84176ecef7ef30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

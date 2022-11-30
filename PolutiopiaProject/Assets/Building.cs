@@ -15,7 +15,6 @@ public class Building : MonoBehaviour
     public Sprite UIImage; 
     [TextArea]
     public string description;
-
     private void OnMouseDown()
     {
         LevelManager.Instance.OpenBuildingStatPanel(this);

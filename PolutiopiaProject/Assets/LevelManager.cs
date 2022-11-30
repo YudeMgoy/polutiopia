@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     [Header("Managers")]
     public ShopManager ShopManager;
     public GridManager GridManager;
+    public TimerManager TimerManager;
 
     [Header("UI")]
     public GameObject BuildingStatPanel;
@@ -41,14 +42,9 @@ public class LevelManager : MonoBehaviour
     public float[] TargetPolutions;
     float pollutionInPercent;
 
-    [Header("Timer Setting")]
-    public Image timerImage;
-    public GameObject pausePanel;
-    public int duration;
-    private int remainingDuration;
-    public TimerFill timerFill;
-
-
+    [Header("Audio")]
+    [SerializeField]AudioSource sfx;
+    [SerializeField]AudioClip sfxClick;
     private void Awake()
     {
         Instance = this;
@@ -57,13 +53,14 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         CountingPollution(0);
-        Being(duration);
+        endButton.gameObject.SetActive(false);
     }
 
     private void Update()
     {
         woodText.text = "Wood  : " + wood.ToString();
         moneyText.text = "Money : " + money.ToString();
+
     }
 
     public void OpenBuildingStatPanel(Building _building)
@@ -72,6 +69,9 @@ public class LevelManager : MonoBehaviour
             return;
         SelectedBuilding = _building;
         BuildingStatPanel.SetActive(true);
+        //play audio click
+        sfx.PlayOneShot(sfxClick,sfx.volume);
+        //========
         StatPanelScript.UpdateUI();
         if(SelectedBuilding.tag == "WoodCenter")
             WoodCenterPanel.SetActive(true);
@@ -86,49 +86,26 @@ public class LevelManager : MonoBehaviour
             CurrentPolution = 0f;
         pollutionInPercent = CurrentPolution / MaxPolution * 100;
         ProgressImage.fillAmount = pollutionInPercent * 0.01f;
-    }
 
-    private void Being(int Seconds)
-    {
-        remainingDuration = Seconds;
-        StartCoroutine(UpdateTimer());
-    }
-
-    IEnumerator UpdateTimer()
-    {
-        while (remainingDuration >= 0)
+        if (pollutionInPercent <= TargetPolutions[0])
         {
-            timerFill.UpdateFill((float)remainingDuration / duration);
-            timerImage.fillAmount = Mathf.InverseLerp(0, duration, remainingDuration);
-            remainingDuration--;
-            yield return new WaitForSeconds(1);
+            if (endButton.gameObject.activeSelf == false)
+            {
+                endButton.gameObject.SetActive(true);
+                // GameOver()
+            }
+
+            // endButton.gameObject.SetActive(true);
+            // GameOver(true);
+
         }
-        OnEnd();
-    }
-
-    private void OnEnd()
-    {
-        GameOver(true);
-        print("times Up");
-    }
-
-    public void PauseGame()
-    {
-        // Time.timeScale = 0;
-        StopAllCoroutines();
-    }
-
-    public void ResumeGame()
-    {
-        // Time.timeScale = 1;
-        StartCoroutine(UpdateTimer());
-        pausePanel.SetActive(true);
     }
 
     public void GameOver(bool lose)
     {
         if (lose)
         {
+            TimerManager.OnEnd();
             if (CurrentPolution <= TargetPolutions[3])//Bintang 4
             {
                 endGamePanel.SetActive(true);
@@ -136,7 +113,6 @@ public class LevelManager : MonoBehaviour
                 endText.text = "You Win";
                 var score = TargetPolutions[3] - CurrentPolution;
                 endScoreText.text = "Score : " + score.ToString();
-                endButton.gameObject.SetActive(true);
             }
             else if (CurrentPolution <= TargetPolutions[2])//Bintang 3
             {
@@ -144,31 +120,34 @@ public class LevelManager : MonoBehaviour
                 endText.text = "You Win";
                 var score = TargetPolutions[2].ToString();
                 endScoreText.text = $"Score : {score}";
-                endButton.gameObject.SetActive(true);
+                Debug.Log("Bintang 3");
             }
             else if (CurrentPolution <= TargetPolutions[1])//Bintang 2
             {
+                Debug.Log("Bintang 2");
                 endGamePanel.SetActive(true);
                 endText.text = "You Win";
                 var score = TargetPolutions[1].ToString();
                 endScoreText.text = $"Score : {score}";
-                endButton.gameObject.SetActive(true);
             }
             else if (CurrentPolution <= TargetPolutions[0])//Bintang 1
             {
+                Debug.Log("Bintang 1");
                 endGamePanel.SetActive(true);
                 endText.text = "You Win";
                 var score = TargetPolutions[0].ToString();
                 endScoreText.text = $"Score : {score}";
-                endButton.gameObject.SetActive(true);
             }
             else
             {
                 endGamePanel.SetActive(true);
                 endText.text = "You Lose";
-                endButton.gameObject.SetActive(false);
-
             }
+        }
+        else
+        {
+
+
         }
     }
 
