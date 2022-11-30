@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 568631976314106181}
   - component: {fileID: 5363537540227931208}
   - component: {fileID: 3142185931545112888}
-  - component: {fileID: 6726209653805842442}
+  - component: {fileID: 2134006484356205242}
   m_Layer: 0
   m_Name: WoodCenter
   m_TagString: WoodCenter
@@ -54,7 +54,7 @@ MonoBehaviour:
   MoneyPrice: 0
   moneySellBonus: 0
   WoodPrice: 150
-  woodSellBonus: 75
+  woodSellBonus: 0
   PollutionReduction: 10
   UIImage: {fileID: 0}
   description: Increase 1 Money/Second
@@ -86,9 +86,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6726209653805842442
+  m_Size: {x: 2, y: 1.5, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &2134006484356205242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,6 +117,18 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 00d9a8a215a5fb84ba980e3b6a842288, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 00d9a8a215a5fb84ba980e3b6a842288, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 00d9a8a215a5fb84ba980e3b6a842288, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 00d9a8a215a5fb84ba980e3b6a842288, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00d9a8a215a5fb84ba980e3b6a842288, type: 3}
       propertyPath: m_LocalPosition.x
