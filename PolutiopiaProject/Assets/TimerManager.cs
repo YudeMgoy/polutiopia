@@ -35,15 +35,7 @@ public class TimerManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         LevelManager.GameOver(true);
-        OnEnd();
     }
-
-    public void OnEnd()
-    {
-        // LevelManager.GameOver(true);
-        print("times Up");
-    }
-
     public void PauseGame()
     {
         // Time.timeScale = 0;

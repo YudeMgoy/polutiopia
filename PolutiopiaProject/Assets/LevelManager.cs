@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     public double money;
     public double wood;
     public double woodCost = 1;
-    public double moneyCostperWood=100;
+    public double moneyCostperWood = 100;
     public TMP_Text woodText;
     public TMP_Text moneyText;
 
@@ -43,12 +43,15 @@ public class LevelManager : MonoBehaviour
     float pollutionInPercent;
 
     [Header("Audio")]
-    [SerializeField]AudioSource sfx;
-    [SerializeField]AudioClip sfxClick;
+    [SerializeField] AudioSource sfx;
+    [SerializeField] AudioClip sfxClick;
     private void Awake()
     {
         Instance = this;
     }
+
+    [Header("End Game")]
+    public Image[] endGameStars;
 
     private void Start()
     {
@@ -70,10 +73,10 @@ public class LevelManager : MonoBehaviour
         SelectedBuilding = _building;
         BuildingStatPanel.SetActive(true);
         //play audio click
-        sfx.PlayOneShot(sfxClick,sfx.volume);
+        sfx.PlayOneShot(sfxClick, sfx.volume);
         //========
         StatPanelScript.UpdateUI();
-        if(SelectedBuilding.tag == "WoodCenter")
+        if (SelectedBuilding.tag == "WoodCenter")
             WoodCenterPanel.SetActive(true);
         else
             WoodCenterPanel.SetActive(false);
@@ -87,17 +90,15 @@ public class LevelManager : MonoBehaviour
         pollutionInPercent = CurrentPolution / MaxPolution * 100;
         ProgressImage.fillAmount = pollutionInPercent * 0.01f;
 
-        if (pollutionInPercent <= TargetPolutions[0])
+        if (pollutionInPercent <= TargetPolutions[3])
+            GameOver(true);
+
+        if (pollutionInPercent <= TargetPolutions[2])
         {
             if (endButton.gameObject.activeSelf == false)
             {
                 endButton.gameObject.SetActive(true);
-                // GameOver()
             }
-
-            // endButton.gameObject.SetActive(true);
-            // GameOver(true);
-
         }
     }
 
@@ -105,30 +106,29 @@ public class LevelManager : MonoBehaviour
     {
         if (lose)
         {
-            TimerManager.OnEnd();
             if (CurrentPolution <= TargetPolutions[3])//Bintang 4
             {
-                endGamePanel.SetActive(true);
                 Debug.Log("Bintang 4");
-                endText.text = "You Win";
-                var score = TargetPolutions[3] - CurrentPolution;
-                endScoreText.text = "Score : " + score.ToString();
+                endGamePanel.SetActive(true);
+                endGameStars[0].gameObject.SetActive(true);
+                endGameStars[1].gameObject.SetActive(true);
+                endGameStars[2].gameObject.SetActive(true);
+                endGameStars[3].gameObject.SetActive(true);
             }
             else if (CurrentPolution <= TargetPolutions[2])//Bintang 3
             {
-                endGamePanel.SetActive(true);
-                endText.text = "You Win";
-                var score = TargetPolutions[2].ToString();
-                endScoreText.text = $"Score : {score}";
                 Debug.Log("Bintang 3");
+                endGamePanel.SetActive(true);
+                endGameStars[0].gameObject.SetActive(true);
+                endGameStars[1].gameObject.SetActive(true);
+                endGameStars[2].gameObject.SetActive(true);
             }
             else if (CurrentPolution <= TargetPolutions[1])//Bintang 2
             {
                 Debug.Log("Bintang 2");
                 endGamePanel.SetActive(true);
-                endText.text = "You Win";
-                var score = TargetPolutions[1].ToString();
-                endScoreText.text = $"Score : {score}";
+                endGameStars[0].gameObject.SetActive(true);
+                endGameStars[1].gameObject.SetActive(true);
             }
             else if (CurrentPolution <= TargetPolutions[0])//Bintang 1
             {
@@ -161,10 +161,10 @@ public class LevelManager : MonoBehaviour
 
     public void IncreaseWoodCost()
     {
-        woodCost *=2;
+        woodCost *= 2;
     }
     public void UpdateExchangeNum()
     {
-        ExchangeNum.text = woodCost + "Wood = " + moneyCostperWood +"$";
+        ExchangeNum.text = woodCost + "Wood = " + moneyCostperWood + "$";
     }
 }
