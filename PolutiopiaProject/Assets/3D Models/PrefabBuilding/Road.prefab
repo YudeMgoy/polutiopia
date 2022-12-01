@@ -10,9 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7384241045417905146}
   - component: {fileID: 6363018182440897035}
-  - component: {fileID: 7487052123760027373}
-  - component: {fileID: 388165588299243749}
-  - component: {fileID: -989518372905186883}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -49,57 +46,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7487052123760027373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028393427783030189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2ba506dafb7904f84176ecef7ef30f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &388165588299243749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028393427783030189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd51740a194606841af51a2eafa26452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BuildingID: 99
-  BuildingCountLimit: 99
-  name: Road
-  MoneyPrice: 5
-  moneySellBonus: 5
-  WoodPrice: 5
-  woodSellBonus: 5
-  PollutionReduction: 0
-  UIImage: {fileID: 0}
-  description: 
---- !u!114 &-989518372905186883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028393427783030189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad6ee8fa14e7b647935be13e3657d8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gridHeight: 0
-  _drawGridHeightGizmo: 1
-  _gridHeightGizmoSize: 0.05
-  _gridHeightGizmoColor: {r: 1, g: 0, b: 1, a: 1}
-  _enableHandles: 1
 --- !u!1001 &8451650086622059299
 PrefabInstance:
   m_ObjectHideFlags: 0

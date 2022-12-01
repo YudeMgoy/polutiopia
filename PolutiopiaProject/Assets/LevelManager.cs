@@ -41,6 +41,10 @@ public class LevelManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource sfx;
     [SerializeField] AudioClip sfxClick;
+    [SerializeField] AudioClip sfxTrade;
+    [SerializeField]AudioClip sfxTradeFail;
+    [SerializeField]AudioClip sfxEndGame;
+    private bool winStat;
 
     [Header("End Game")]
     public Image[] endGameStars;
@@ -57,6 +61,7 @@ public class LevelManager : MonoBehaviour
     {
         CountingPollution(0);
         endButton.gameObject.SetActive(false);
+        winStat = false;
     }
 
     private void Update()
@@ -64,6 +69,12 @@ public class LevelManager : MonoBehaviour
         woodText.text = "Wood  : " + wood.ToString();
         moneyText.text = "Money : " + money.ToString();
 
+        if(endGamePanel.activeSelf && winStat == false)
+        {
+            //play audio win
+            sfx.PlayOneShot(sfxEndGame,sfx.volume);
+            winStat = true;
+        }
     }
 
     public void OpenBuildingStatPanel(Building _building)
@@ -155,8 +166,16 @@ public class LevelManager : MonoBehaviour
 
     public void WoodExchange()
     {
+        if(wood < woodCost)
+        {
+            //play audio sfx cant trade
+            sfx.PlayOneShot(sfxTradeFail,sfx.volume);
+	        return;
+        }
         money += moneyCostperWood;
         wood -= woodCost;
+        //play audio trade
+        sfx.PlayOneShot(sfxTrade,sfx.volume);
         IncreaseWoodCost();
         UpdateExchangeNum();
     }

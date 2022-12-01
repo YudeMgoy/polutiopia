@@ -57,7 +57,7 @@ MonoBehaviour:
   WoodPrice: 150
   woodSellBonus: 75
   PollutionReduction: -50
-  UIImage: {fileID: 0}
+  UIImage: {fileID: 21300000, guid: 8b92697578d09f3418831e51403d89c5, type: 3}
   description: Increase 1 Polution/Second and 5 Money/Second
 --- !u!114 &9172628793782504262
 MonoBehaviour:

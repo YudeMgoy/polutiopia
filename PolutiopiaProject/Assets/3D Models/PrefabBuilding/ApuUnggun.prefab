@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3161875920242444366}
   - component: {fileID: 767282479848117117}
-  - component: {fileID: 545596062411004926}
-  - component: {fileID: -3405572655430598233}
   m_Layer: 0
   m_Name: ApuUnggun
   m_TagString: Untagged
@@ -49,40 +47,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.9734988, y: 4.091108, z: 5.0406294}
   m_Center: {x: 0.49170268, y: 0.8648721, z: 0.16537702}
---- !u!114 &545596062411004926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3657527317176771965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd51740a194606841af51a2eafa26452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BuildingID: 0
-  BuildingCountLimit: 0
-  name: 
-  MoneyPrice: 0
-  moneySellBonus: 0
-  WoodPrice: 0
-  woodSellBonus: 0
-  PollutionReduction: 0
-  UIImage: {fileID: 0}
-  description: 
---- !u!114 &-3405572655430598233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3657527317176771965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2ba506dafb7904f84176ecef7ef30f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5127048950497443321
 GameObject:
   m_ObjectHideFlags: 0
