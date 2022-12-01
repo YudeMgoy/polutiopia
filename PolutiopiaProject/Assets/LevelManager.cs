@@ -66,8 +66,8 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        woodText.text = "Wood  : " + wood.ToString();
-        moneyText.text = "Money : " + money.ToString();
+        woodText.text = "Wood  : \n" + wood.ToString();
+        moneyText.text = "Money : \n" + money.ToString();
 
         if(endGamePanel.activeSelf && winStat == false)
         {
