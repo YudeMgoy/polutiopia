@@ -26,10 +26,6 @@ public class LevelManager : MonoBehaviour
     public GameObject BuildingStatPanel;
     public Image ProgressImage;
     public StatPanelScript StatPanelScript;
-    public GameObject endGamePanel;
-    public TMP_Text endText;
-    public TMP_Text endScoreText;
-    public Button endButton;
     public GameObject WoodCenterPanel;
     public TMP_Text ExchangeNum;
 
@@ -45,13 +41,17 @@ public class LevelManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource sfx;
     [SerializeField] AudioClip sfxClick;
+
+    [Header("End Game")]
+    public Image[] endGameStars;
+    public Button endButton;
+    public GameObject endGamePanel;
+    public TMP_Text endText;
+
     private void Awake()
     {
         Instance = this;
     }
-
-    [Header("End Game")]
-    public Image[] endGameStars;
 
     private void Start()
     {
@@ -110,6 +110,7 @@ public class LevelManager : MonoBehaviour
             {
                 Debug.Log("Bintang 4");
                 endGamePanel.SetActive(true);
+                endText.text = "You Win";
                 endGameStars[0].gameObject.SetActive(true);
                 endGameStars[1].gameObject.SetActive(true);
                 endGameStars[2].gameObject.SetActive(true);
@@ -119,6 +120,7 @@ public class LevelManager : MonoBehaviour
             {
                 Debug.Log("Bintang 3");
                 endGamePanel.SetActive(true);
+                endText.text = "You Win";
                 endGameStars[0].gameObject.SetActive(true);
                 endGameStars[1].gameObject.SetActive(true);
                 endGameStars[2].gameObject.SetActive(true);
@@ -127,6 +129,7 @@ public class LevelManager : MonoBehaviour
             {
                 Debug.Log("Bintang 2");
                 endGamePanel.SetActive(true);
+                endText.text = "You Win";
                 endGameStars[0].gameObject.SetActive(true);
                 endGameStars[1].gameObject.SetActive(true);
             }
@@ -135,8 +138,7 @@ public class LevelManager : MonoBehaviour
                 Debug.Log("Bintang 1");
                 endGamePanel.SetActive(true);
                 endText.text = "You Win";
-                var score = TargetPolutions[0].ToString();
-                endScoreText.text = $"Score : {score}";
+                endGameStars[0].gameObject.SetActive(true);
             }
             else
             {
