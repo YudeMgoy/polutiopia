@@ -35,25 +35,38 @@ public class SceneLoaderManager : MonoBehaviour
     }
 
     //unlock
-    int levelsunlocked;
+    // int Levelsunlocked;
 
-    public Button[] buttons;
+    // // public Button[] buttons;
+    // [SerializeField]Button buttonVillage;
+    // [SerializeField]Button buttonBazaar;
 
-    void Start()
-    {
-        Levelsunlocked = PlayerPrefs.GetInt("Levelsunlocked",1);
+    // void Start()
+    // {
+    //     Levelsunlocked = PlayerPrefs.GetInt("Levelsunlocked");
+    //     Debug.Log("Level: "+Levelsunlocked);
 
-        for(int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = false;
-        }
+    //     // for(int i = 0; i < buttons.Length; i++)
+    //     // {
+    //     //     buttons[i].interactable = false;
+    //     // }
 
-        for(int i = 0; i < Levelsunlocked; i++)
-        {
-            buttons[i].interactable = true;
-        }
+    //     // for(int i = 0; i < Levelsunlocked; i++)
+    //     // {
+    //     //     buttons[i].interactable = true;
+    //     // }
+    //     if(Levelsunlocked == 2)
+    //         buttonVillage.interactable = true;
+    //     else if(Levelsunlocked == 1)
+    //         buttonBazaar.interactable = true;
+    //     // else if(Levelsunlocked == 0)
+    //     //     buttons[0].interactable = true;
 
         
-    }
+    // }
+    // public void SetLevelPref()
+    // {
+    //     PlayerPrefs.SetInt("Levelunlocked",0);
+    // }
     
 }

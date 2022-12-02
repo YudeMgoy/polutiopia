@@ -5,13 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelScript : MonoBehaviour
 {
+    int levelunlock;
     public void Pass()
     {
+        Debug.Log(PlayerPrefs.GetInt("Levelunlocked"));
+        levelunlock = PlayerPrefs.GetInt("Levelunlocked");
         int currentLevel =  SceneManager.GetActiveScene().buildIndex;
 
-        if(currentLevel >= PlayerPrefs.GetInt("Levelsunlocked"))
+        if(currentLevel == levelunlock)
         {
-            PlayerPrefs.SetInt("Levelsunlocked",currentLevel + 1);
+            currentLevel++;
+            PlayerPrefs.SetInt("Levelunlocked",currentLevel);
+            Debug.Log("Level Script: "+currentLevel);
         }
     }
 }
