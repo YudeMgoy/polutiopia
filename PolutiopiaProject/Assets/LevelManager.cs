@@ -42,8 +42,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] AudioSource sfx;
     [SerializeField] AudioClip sfxClick;
     [SerializeField] AudioClip sfxTrade;
-    [SerializeField]AudioClip sfxTradeFail;
-    [SerializeField]AudioClip sfxEndGame;
+    [SerializeField] AudioClip sfxTradeFail;
+    [SerializeField] AudioClip sfxEndGame;
     private bool winStat;
 
     [Header("End Game")]
@@ -51,6 +51,11 @@ public class LevelManager : MonoBehaviour
     public Button endButton;
     public GameObject endGamePanel;
     public TMP_Text endText;
+
+    [Header("Camera UI")]
+    public CameraController cameraPivot;
+    public GameObject Objectselector;
+
 
     private void Awake()
     {
@@ -69,11 +74,20 @@ public class LevelManager : MonoBehaviour
         woodText.text = "Wood  : \n" + wood.ToString();
         moneyText.text = "Money : \n" + money.ToString();
 
-        if(endGamePanel.activeSelf && winStat == false)
+        if (endGamePanel.activeSelf && winStat == false)
         {
             //play audio win
-            sfx.PlayOneShot(sfxEndGame,sfx.volume);
+            sfx.PlayOneShot(sfxEndGame, sfx.volume);
             winStat = true;
+        }
+
+        if (Objectselector.gameObject.activeSelf)
+        {
+            cameraPivot.enabled = false;
+        }
+        else
+        {
+            cameraPivot.enabled = true;
         }
     }
 
@@ -166,16 +180,16 @@ public class LevelManager : MonoBehaviour
 
     public void WoodExchange()
     {
-        if(wood < woodCost)
+        if (wood < woodCost)
         {
             //play audio sfx cant trade
-            sfx.PlayOneShot(sfxTradeFail,sfx.volume);
-	        return;
+            sfx.PlayOneShot(sfxTradeFail, sfx.volume);
+            return;
         }
         money += moneyCostperWood;
         wood -= woodCost;
         //play audio trade
-        sfx.PlayOneShot(sfxTrade,sfx.volume);
+        sfx.PlayOneShot(sfxTrade, sfx.volume);
         IncreaseWoodCost();
         UpdateExchangeNum();
     }
