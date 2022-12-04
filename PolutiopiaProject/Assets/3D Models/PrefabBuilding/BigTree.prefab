@@ -47,16 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51740a194606841af51a2eafa26452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingID: 0
-  BuildingCountLimit: 10
+  BuildingID: 4
+  BuildingCountLimit: 5
   name: Big Tree
   MoneyPrice: 75
   moneySellBonus: 0
   WoodPrice: 0
   woodSellBonus: 15
-  PollutionReduction: 20
+  PollutionReduction: 10
   UIImage: {fileID: 21300000, guid: da55f3dec2c0e874b84e37dc9e272b3b, type: 3}
-  description: Reduce pollution by 20
+  description: Reduce pollution by 10
 --- !u!114 &3598291827826291304
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Hypertonic.GridPlacement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class LevelManager : MonoBehaviour
     [Header("Resources")]
     public double money;
     public double wood;
-    public double woodCost = 1;
-    public double moneyCostperWood = 100;
     public TMP_Text woodText;
     public TMP_Text moneyText;
+
+    [Header("WoodCenter")]
+    public double woodCost = 1;
+    public double moneyCostperWood = 100;
+
 
     [Header("Managers")]
     public ShopManager ShopManager;
@@ -52,6 +56,7 @@ public class LevelManager : MonoBehaviour
     public GameObject endGamePanel;
     public TMP_Text endText;
 
+
     [Header("Camera UI")]
     public CameraController cameraPivot;
     public GameObject Objectselector;
@@ -60,17 +65,25 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
     }
 
     private void Start()
     {
+
         CountingPollution(0);
         endButton.gameObject.SetActive(false);
         winStat = false;
+
+        
     }
 
     private void Update()
     {
+
+        if(CurrentPolution>MaxPolution)
+            CurrentPolution=MaxPolution;
+        Debug.Log("current pollution number: "+CurrentPolution);
         woodText.text = "Wood  : \n" + wood.ToString();
         moneyText.text = "Money : \n" + money.ToString();
 
@@ -109,6 +122,7 @@ public class LevelManager : MonoBehaviour
 
     public void CountingPollution(float _pollution)
     {
+        
         CurrentPolution -= _pollution;
         if (CurrentPolution <= 0f)
             CurrentPolution = 0f;
@@ -201,5 +215,13 @@ public class LevelManager : MonoBehaviour
     public void UpdateExchangeNum()
     {
         ExchangeNum.text = woodCost + "Wood = " + moneyCostperWood + "$";
+    }
+
+    public void CheckCost(BuildingCost cost)
+    {
+        if(money < cost.moneyPrice || wood<cost.woodPrice)
+        {    
+            cost.button.interactable = false;
+        }
     }
 }

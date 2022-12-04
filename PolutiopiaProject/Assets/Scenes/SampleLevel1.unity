@@ -1688,7 +1688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wood : 100'
+  m_text: 'Wood : 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2230,13 +2230,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 113036665}
+  - component: {fileID: 113036666}
   m_Layer: 5
   m_Name: Factory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &113036665
 Transform:
   m_ObjectHideFlags: 0
@@ -2252,6 +2253,21 @@ Transform:
   m_Father: {fileID: 430004471}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &113036666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113036664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ddcdfd915494540a053e9e75feadc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyPrice: 150
+  woodPrice: 100
+  button: {fileID: 97964059}
 --- !u!1 &113432296
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,13 +5497,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 319163255}
+  - component: {fileID: 319163256}
   m_Layer: 5
   m_Name: BigTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &319163255
 Transform:
   m_ObjectHideFlags: 0
@@ -5503,6 +5520,21 @@ Transform:
   m_Father: {fileID: 1594511805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &319163256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319163254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ddcdfd915494540a053e9e75feadc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyPrice: 75
+  woodPrice: 0
+  button: {fileID: 1743781605}
 --- !u!1 &319437460
 GameObject:
   m_ObjectHideFlags: 0
@@ -7039,13 +7071,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422923895}
+  - component: {fileID: 422923896}
   m_Layer: 5
   m_Name: RecycleBin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &422923895
 Transform:
   m_ObjectHideFlags: 0
@@ -7061,6 +7094,21 @@ Transform:
   m_Father: {fileID: 1883707911}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &422923896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422923894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ddcdfd915494540a053e9e75feadc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyPrice: 100
+  woodPrice: 0
+  button: {fileID: 1996644525}
 --- !u!4 &424788115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bbfeebf9bb5c9e648b6936f3699d008f, type: 3}
@@ -10742,7 +10790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wood : 100'
+  m_text: 'Wood : 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11001,7 +11049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money : 200'
+  m_text: 'Money : 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11293,7 +11341,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money : 200'
+  m_text: 'Money : 150'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17271,7 +17319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wood : 100'
+  m_text: 'Wood : 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19175,13 +19223,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1170596381}
+  - component: {fileID: 1170596382}
   m_Layer: 5
   m_Name: TrashCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1170596381
 Transform:
   m_ObjectHideFlags: 0
@@ -19197,6 +19246,21 @@ Transform:
   m_Father: {fileID: 1935589835}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1170596382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170596380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ddcdfd915494540a053e9e75feadc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyPrice: 75
+  woodPrice: 0
+  button: {fileID: 4044752861692832824}
 --- !u!1001 &1175115944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20084,7 +20148,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wood : 100'
+  m_text: 'Wood : 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23245,13 +23309,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1521885246}
+  - component: {fileID: 1521885247}
   m_Layer: 5
   m_Name: SmallTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1521885246
 Transform:
   m_ObjectHideFlags: 0
@@ -23267,6 +23332,21 @@ Transform:
   m_Father: {fileID: 1559197412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1521885247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521885245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ddcdfd915494540a053e9e75feadc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyPrice: 50
+  woodPrice: 0
+  button: {fileID: 1739497027}
 --- !u!1001 &1523887120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24361,7 +24441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money : 100'
+  m_text: 'Money : 50'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28952,13 +29032,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1811344224}
+  - component: {fileID: 1811344225}
   m_Layer: 5
   m_Name: WoodCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1811344224
 Transform:
   m_ObjectHideFlags: 0
@@ -28974,6 +29055,21 @@ Transform:
   m_Father: {fileID: 466642878}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1811344225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811344223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ddcdfd915494540a053e9e75feadc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyPrice: 50
+  woodPrice: 150
+  button: {fileID: 1547970665}
 --- !u!4 &1815435218 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bbfeebf9bb5c9e648b6936f3699d008f, type: 3}
@@ -29971,7 +30067,7 @@ MonoBehaviour:
   LevelManager: {fileID: 737278291}
   timerImage: {fileID: 1313004773}
   pausePanel: {fileID: 279040705}
-  duration: 600
+  duration: 300
   timerFill: {fileID: 1870788928}
 --- !u!4 &1870788930
 Transform:
@@ -30837,7 +30933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1932242651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30878,7 +30974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wood : 100'
+  m_text: 'Wood : 150'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30905,7 +31001,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.8
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -30991,7 +31087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 124.44385, y: -109.63687}
+  m_AnchoredPosition: {x: 124.443756, y: -109.63687}
   m_SizeDelta: {x: 208.88751, y: 219.27374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935589836
@@ -31594,6 +31690,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1639496276}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
+      propertyPath: wood
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
+      propertyPath: money
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: endText
       value: 
       objectReference: {fileID: 1827215131}
@@ -31609,6 +31713,10 @@ PrefabInstance:
       propertyPath: sfxTrade
       value: 
       objectReference: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+    - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
+      propertyPath: woodCost
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: woodText
       value: 
@@ -31678,12 +31786,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8155071734351296328}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
+      propertyPath: TrashcanLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: Objectselector
       value: 
       objectReference: {fileID: 214924686}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: CurrentPolution
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
+      propertyPath: RecyclebinLimit
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: StatPanelScript
@@ -31693,6 +31809,10 @@ PrefabInstance:
       propertyPath: WoodCenterPanel
       value: 
       objectReference: {fileID: 2124975548}
+    - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
+      propertyPath: moneyCostperWood
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: BuildingStatPanel
       value: 
@@ -32547,6 +32667,78 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 737278291}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: CheckCost
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1170596382}
+          m_ObjectArgumentAssemblyTypeName: BuildingCost, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -33435,7 +33627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money : 100'
+  m_text: 'Money : 75'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

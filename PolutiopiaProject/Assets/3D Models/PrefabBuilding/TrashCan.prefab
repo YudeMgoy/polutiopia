@@ -48,11 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51740a194606841af51a2eafa26452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingID: 4
-  BuildingCountLimit: 4
+  BuildingID: 0
+  BuildingCountLimit: 5
   name: Trash Can
-  MoneyPrice: 100
-  moneySellBonus: 50
+  MoneyPrice: 75
+  moneySellBonus: 15
   WoodPrice: 0
   woodSellBonus: 0
   PollutionReduction: 10

@@ -133,16 +133,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51740a194606841af51a2eafa26452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingID: 4
-  BuildingCountLimit: 4
+  BuildingID: 1
+  BuildingCountLimit: 3
   name: Trash Can
   MoneyPrice: 100
-  moneySellBonus: 50
+  moneySellBonus: 25
   WoodPrice: 0
   woodSellBonus: 0
-  PollutionReduction: 50
+  PollutionReduction: 15
   UIImage: {fileID: 21300000, guid: 849f8f119c2a3244d914b3211fc29bf2, type: 3}
-  description: Reduce 10 Polutions.
+  description: Reduce 15 Polutions.
 --- !u!114 &3622475516982910794
 MonoBehaviour:
   m_ObjectHideFlags: 0

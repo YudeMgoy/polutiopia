@@ -12,9 +12,12 @@ public class Building : MonoBehaviour
     public double WoodPrice;
     public int woodSellBonus;
     public float PollutionReduction;
+
     public Sprite UIImage; 
     [TextArea]
     public string description;
+    
+    
     private void OnMouseDown()
     {
         LevelManager.Instance.OpenBuildingStatPanel(this);

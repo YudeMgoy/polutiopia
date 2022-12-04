@@ -47,16 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51740a194606841af51a2eafa26452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildingPrefab: {fileID: 7452338444009709614}
   BuildingID: 5
   BuildingCountLimit: 1
   name: Wood Center
-  MoneyPrice: 0
-  moneySellBonus: 0
+  MoneyPrice: 50
+  moneySellBonus: 10
   WoodPrice: 150
-  woodSellBonus: 0
-  PollutionReduction: 10
+  woodSellBonus: 50
+  PollutionReduction: 0
   UIImage: {fileID: 21300000, guid: 5a8d5cc7f9efe9149915fcfbaa87e7cb, type: 3}
-  description: Increase 1 Money/Second
+  description: Trade Wood for Money , Cost increase per trade
 --- !u!114 &5363537540227931208
 MonoBehaviour:
   m_ObjectHideFlags: 0

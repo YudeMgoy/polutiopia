@@ -29,6 +29,7 @@ namespace Hypertonic.GridPlacement.Example.BasicDemo
             Building prefabBuilding = _gridObjectToSpawnPrefab.GetComponent<Building>();
             Building[] buildings = FindObjectsOfType<Building>();
             int count = 0;
+            Debug.Log("Building Limit: "+prefabBuilding.BuildingCountLimit);
             foreach(Building building in buildings)
             {
                 if (building.BuildingID == prefabBuilding.BuildingID)
@@ -36,6 +37,7 @@ namespace Hypertonic.GridPlacement.Example.BasicDemo
             }
             if (count >= prefabBuilding.BuildingCountLimit)
             {
+                
                 Debug.Log("Building Reach its Limit");
                 return;
             }
