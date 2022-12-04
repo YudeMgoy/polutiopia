@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd6174484389be48a20961388bd059c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridObjectToSpawnPrefab: {fileID: 4185836018247722855, guid: 34a39e7678c86fc4cb5671ddd5a00b0a, type: 3}
+  _gridObjectToSpawnPrefab: {fileID: 4185836018247722855, guid: b165aca9770ef30428ff5597785c8fc2, type: 3}
 --- !u!114 &97964059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7960,7 +7960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 Wood = 100$
+  m_text: 2 Wood = 50$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7987,7 +7987,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.1
+  m_fontSize: 47.6
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -23784,7 +23784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd6174484389be48a20961388bd059c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridObjectToSpawnPrefab: {fileID: 7452338444009709614, guid: dc91a0a8ef6a59b4cab0f9fd6c3ec632, type: 3}
+  _gridObjectToSpawnPrefab: {fileID: 7452338444009709614, guid: 0da8409b25166234c9dc886aa84053b3, type: 3}
 --- !u!114 &1547970665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27654,7 +27654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd6174484389be48a20961388bd059c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridObjectToSpawnPrefab: {fileID: 3183737810200026261, guid: 08b80f43c90e8814fbc0327d7407b8dd, type: 3}
+  _gridObjectToSpawnPrefab: {fileID: 3183737810200026261, guid: 9484c5f7467b0b341a312d6a2709f1f1, type: 3}
 --- !u!114 &1739497027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27914,7 +27914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd6174484389be48a20961388bd059c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridObjectToSpawnPrefab: {fileID: 6862327078237493912, guid: 2e9eedf365f1faa4e94eea73be4d4684, type: 3}
+  _gridObjectToSpawnPrefab: {fileID: 6862327078237493912, guid: 46f79be5c97f71d4a8e7ebe339c75866, type: 3}
 --- !u!114 &1743781605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29068,7 +29068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyPrice: 50
-  woodPrice: 150
+  woodPrice: 100
   button: {fileID: 1547970665}
 --- !u!4 &1815435218 stripped
 Transform:
@@ -31691,11 +31691,11 @@ PrefabInstance:
       objectReference: {fileID: 1639496276}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: wood
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: money
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: endText
@@ -31788,6 +31788,10 @@ PrefabInstance:
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: TrashcanLimit
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
+      propertyPath: countIncrmant
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8521619742319585999, guid: 2745c48b40a6ee84dab8650bcf373e1e, type: 3}
       propertyPath: Objectselector
@@ -31910,7 +31914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd6174484389be48a20961388bd059c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridObjectToSpawnPrefab: {fileID: 3523892129602501988, guid: 5371e553b9cb8514ead0bb72082342ad, type: 3}
+  _gridObjectToSpawnPrefab: {fileID: 3523892129602501988, guid: a0a09b10538fe934497b023831bf1fbe, type: 3}
 --- !u!114 &1996644525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32684,61 +32688,61 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 737278291}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: CheckCost
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 422923896}
+          m_ObjectArgumentAssemblyTypeName: BuildingCost, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 737278291}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: CheckCost
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1521885247}
+          m_ObjectArgumentAssemblyTypeName: BuildingCost, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 737278291}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: CheckCost
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 319163256}
+          m_ObjectArgumentAssemblyTypeName: BuildingCost, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 737278291}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: CheckCost
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1811344225}
+          m_ObjectArgumentAssemblyTypeName: BuildingCost, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 737278291}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: CheckCost
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 113036666}
+          m_ObjectArgumentAssemblyTypeName: BuildingCost, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -33478,7 +33482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2124975549
 RectTransform:
   m_ObjectHideFlags: 0

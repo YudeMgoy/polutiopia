@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
     [Header("WoodCenter")]
     public double woodCost = 1;
     public double moneyCostperWood = 100;
+    public int countIncrmant = 0;
+    int countTred = 0;
 
 
     [Header("Managers")]
@@ -75,15 +77,15 @@ public class LevelManager : MonoBehaviour
         endButton.gameObject.SetActive(false);
         winStat = false;
 
-        
+
     }
 
     private void Update()
     {
 
-        if(CurrentPolution>MaxPolution)
-            CurrentPolution=MaxPolution;
-        Debug.Log("current pollution number: "+CurrentPolution);
+        if (CurrentPolution > MaxPolution)
+            CurrentPolution = MaxPolution;
+        Debug.Log("current pollution number: " + CurrentPolution);
         woodText.text = "Wood  : \n" + wood.ToString();
         moneyText.text = "Money : \n" + money.ToString();
 
@@ -122,7 +124,7 @@ public class LevelManager : MonoBehaviour
 
     public void CountingPollution(float _pollution)
     {
-        
+
         CurrentPolution -= _pollution;
         if (CurrentPolution <= 0f)
             CurrentPolution = 0f;
@@ -210,7 +212,13 @@ public class LevelManager : MonoBehaviour
 
     public void IncreaseWoodCost()
     {
-        woodCost *= 2;
+        if (countTred >= countIncrmant)
+        {
+            woodCost *= 2;
+            countTred = 0;
+        }
+
+        countTred++;
     }
     public void UpdateExchangeNum()
     {
@@ -219,8 +227,10 @@ public class LevelManager : MonoBehaviour
 
     public void CheckCost(BuildingCost cost)
     {
-        if(money < cost.moneyPrice || wood<cost.woodPrice)
-        {    
+        cost.button.interactable = true;
+
+        if (money < cost.moneyPrice || wood < cost.woodPrice)
+        {
             cost.button.interactable = false;
         }
     }
